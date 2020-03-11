@@ -1,0 +1,158 @@
+[
+  {
+    "title": "服务器管理",
+    "icon": "layui-icon-layouts",
+    "id": "nodeManager",
+    "childs": [
+      {
+        "title": "服务器列表",
+        "id": "nodeList",
+        "url": "./node/list.html"
+      },
+      {
+        "title": "SSH管理",
+        "id": "sshList",
+        "url": "./node/ssh/list.html"
+      }
+    ]
+  },
+  {
+    "title": "定时调度",
+    "icon": "layui-icon-log",
+    "id": "dingshidiaodu",
+    "childs": [
+      {
+        "id": "index",
+        "title": "运行报表",
+        "url": "http://26.47.30.21:9966/acelee-job-admin/"
+      },
+      {
+        "id": "renwuguanli",
+        "title": "任务管理",
+        "url": "http://26.47.30.21:9966/acelee-job-admin/jobinfo"
+      },
+      {
+        "id": "diaodurizhi",
+        "title": "调度日志",
+        "url": "http://26.47.30.21:9966/acelee-job-admin/joblog"
+      },
+      {
+        "id": "zhixingqi",
+        "title": "执行器管理",
+        "url": "http://26.47.30.21:9966/acelee-job-admin/jobgroup"
+      },
+      {
+        "id": "help",
+        "title": "使用教程",
+        "url": "http://26.47.30.21:9966/acelee-job-admin/help"
+      }
+    ]
+  },
+//  {
+//    "title": "节点分发",
+//    "icon": "layui-icon-release",
+//    "childs": [
+//      {
+//        "id": "outgiving",
+//        "title": "分发列表",
+//        "url": "./outgiving/list.html"
+//      },
+//      {
+//        "id": "outgivingLog",
+//        "title": "分发日志",
+//        "url": "./outgiving/log.html",
+//        "dynamic": "showOutGiving"
+//      },
+//      {
+//        "id": "outgivingWhitelistDirectory",
+//        "title": "分发白名单",
+//        "url": "./outgiving/whitelistDirectory.html",
+//        "dynamic": "showOutGiving"
+//      }
+//    ]
+//  },
+  {
+    "title": "监控管理",
+    "icon": "layui-icon-chart-screen",
+    "childs": [
+      {
+        "id": "monitor",
+        "title": "监控列表",
+        "url": "./monitor/list.html"
+      },
+      {
+        "id": "monitorLog",
+        "title": "监控日志",
+        "url": "./monitor/log.html"
+      }
+    ]
+  },
+//  {
+//    "title": "在线构建",
+//    "icon": "layui-icon-tree",
+//    "childs": [
+//      {
+//        "id": "buildList",
+//        "title": "构建列表",
+//        "url": "./build/list.html"
+//      },
+//      {
+//        "id": "buildHistory",
+//        "title": "构建历史",
+//        "url": "./build/history.html"
+//      }
+//    ]
+//  },
+  {
+    "title": "用户管理",
+    "icon": "layui-icon-friends",
+    "childs": [
+      {
+        "id": "user",
+        "title": "用户列表",
+        "url": "./user/list"
+      },
+      {
+        "id": "roleList",
+        "title": "角色管理",
+        "url": "./user/role/list.html"
+      },
+      {
+        "id": "user_log",
+        "title": "操作日志",
+        "url": "./user/log/list.html"
+      }
+    ]
+  },
+  {
+    "title": "系统管理",
+    "icon": "layui-icon-set-fill",
+    "childs": [
+      {
+        "id": "monitorConfigEmail",
+        "title": "邮箱配置",
+        "url": "./system/mailConfig.html"
+      },
+      {
+        "id": "cacheManage",
+        "title": "缓存管理",
+        "url": "./system/cache.html"
+      },
+      {
+        "id": "logManage",
+        "title": "系统日志",
+        "url": "./system/log.html"
+      },
+      {
+        "id": "update",
+        "title": "在线升级",
+        "url": "./system/update.html"
+      },
+      {
+        "id": "sysConfig",
+        "title": "系统配置",
+        "url": "./system/config.html"
+      }
+    ]
+  }
+]

@@ -1,0 +1,25 @@
+#运行端口号
+server:
+  port: 9709
+  servlet:
+    session:
+      timeout: 1H
+      cookie:
+        name: Devops-AGENT
+spring:
+  application:
+    name: devopsAgent
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      max-request-size: 2GB
+      max-file-size: 1GB
+banner:
+  msg: 自动化运维平台启动中
+# 启动完成自动初始化指定包
+preload:
+  packageName: gzx.devops.system.init
+# 强制去掉空格
+request:
+  trimAll: true

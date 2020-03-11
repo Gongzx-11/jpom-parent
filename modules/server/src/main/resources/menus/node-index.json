@@ -1,0 +1,101 @@
+[
+  {
+    "id": "welcome",
+    "title": "首页",
+    "url": "./welcome",
+    "icon": "layui-icon-console"
+  },
+  {
+    "id": "manage",
+    "title": "项目管理",
+    "icon": "layui-icon-templeate-1",
+    "childs": [
+      {
+        "id": "jdkList",
+        "title": "JDK管理",
+        "url": "./manage/jdkList.html"
+      },
+      {
+        "id": "manageList",
+        "title": "项目列表",
+        "url": "./manage/projectInfo"
+      },
+      {
+        "id": "projectRecover",
+        "title": "项目回收",
+        "url": "./manage/recover/list.html"
+      },
+      {
+        "id": "tomcatManage",
+        "title": "Tomcat管理",
+        "url": "./tomcat/tomcatManage"
+      }
+    ]
+  },
+  {
+    "id": "otherM",
+    "title": "其他功能",
+    "icon": "layui-icon-circle-dot",
+    "childs": [
+//      {
+//        "id": "tomcatManage",
+//        "title": "Tomcat管理",
+//        "url": "./tomcat/tomcatManage"
+//      },
+      {
+        "id": "script",
+        "title": "脚本模板",
+        "url": "./script/list.html"
+      }
+    ]
+  },
+  {
+    "id": "nginx",
+    "title": "nginx管理",
+    "icon": "layui-icon-layer",
+    "childs": [
+      {
+        "id": "nginxList",
+        "title": "nginx列表",
+        "url": "./system/nginx/list.html"
+      }
+//      {
+//        "id": "certificate",
+//        "url": "./system/certificate/list.html",
+//        "title": "证书管理"
+//      }
+    ]
+  },
+  {
+    "id": "systemConfig",
+    "title": "系统管理",
+    "icon": "layui-icon-set-fill",
+    "childs": [
+      {
+        "id": "whitelistDirectory",
+        "title": "白名单目录",
+        "url": "./system/whitelistDirectory"
+      },
+      {
+        "id": "cacheManage",
+        "title": "缓存管理",
+        "url": "../system/cache.html"
+      },
+      {
+        "id": "logManage",
+        "title": "系统日志",
+        "url": "../system/log.html"
+      },
+      {
+        "id": "update",
+        "title": "在线升级",
+        "url": "../system/update.html"
+      },
+      {
+        "id": "sysConfig",
+        "title": "系统配置",
+        "url": "../system/config.html"
+      }
+    ]
+  }
+]

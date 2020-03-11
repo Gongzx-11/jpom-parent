@@ -1,0 +1,3 @@
+module gzx.devops {
+    requires javax.management;
+}

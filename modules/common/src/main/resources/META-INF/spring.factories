@@ -1,0 +1,2 @@
+#todo ExtConfigEnvironmentPostProcessor
+org.springframework.boot.env.EnvironmentPostProcessor=gzx.devops.system.ExtConfigEnvironmentPostProcessor

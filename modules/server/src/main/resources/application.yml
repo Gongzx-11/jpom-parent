@@ -1,0 +1,50 @@
+#运行端口号
+server:
+  port: 9704
+  servlet:
+    session:
+      cookie:
+        name: DevOps-SERVER
+      timeout: 1H
+spring:
+  application:
+    name: devopsServer
+  profiles:
+    active: pro
+  #thymeleaf start
+  thymeleaf:
+    mode: HTML
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    prefix: classpath:/templates/
+  servlet:
+    multipart:
+      max-request-size: 2GB
+      max-file-size: 1GB
+#thymeleaf end
+banner:
+  msg: 自动化运维平台启动中
+# 静态资源配置
+interceptor:
+  resourceHandler: /static/**,/favicon.ico
+  resourceLocation: classpath:/static/,classpath:/static/favicon.ico
+# 启动完成自动初始化指定包
+preload:
+  packageName: gzx.devops.system.init
+# 强制去掉空格
+request:
+  trimAll: true
+  parameterXss: false
+
+#xxl:
+#  job:
+#    accessToken:
+#    admin:
+#      addresses: http://192.168.1.217:9966/acelee-job-admin/
+#    executor:
+#      appname: test-003-job
+#      ip: 192.168.1.72
+#      logpath:
+#      logretentiondays: 3
+#      port: 9988

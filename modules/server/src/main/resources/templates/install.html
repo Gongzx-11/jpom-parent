@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head th:replace="common/head::head">
+</head>
+
+<body>
+<div class="layui-carousel" id="div-carousel" style="width: 100%; height: 100%; position: fixed; z-index: 0;">
+    <div carousel-item>
+        <div><img th:src="@{${session.jpomProxyPath}+'/static/backgrounds/1.gif?v='+${session.staticCacheTime}}"
+                  style="width: 100%;">
+        </div>
+        <div><img th:src="@{${session.jpomProxyPath}+'/static/backgrounds/2.gif?v='+${session.staticCacheTime}}"
+                  class="auto">
+        </div>
+        <div><img th:src="@{${session.jpomProxyPath}+'/static/backgrounds/3.gif?v='+${session.staticCacheTime}}"
+                  class="auto">
+        </div>
+    </div>
+</div>
+<div class="layui-container" style="margin-top: 150px;">
+    <div class="layui-row">
+        <div class="layui-col-md4 layui-col-md-offset4">
+            <form class="layui-form" method="post">
+                <fieldset class="layui-elem-field">
+                    <legend style="color: #f0f0f0">初始化系统</legend>
+                    <div class="layui-field-box" style="color: #f0f0f0">
+                        下面输入的账号密码将作为管理员账户
+                          请慎重输入，记录好账号密码
+                    </div>
+                </fieldset>
+                <br>
+<!--                <div class="layui-form-item" style="color: #FFF; font-size: 24px;text-align: center;">-->
+<!--                    <span>初始化系统</span>-->
+<!--                </div>-->
+
+                <div class="layui-form-item">
+                    <div class="layui-input-block" style="margin-left: 0px;">
+                        <input type="text" style="background-color:transparent;border-width:1px;border-color:#b8f8ff;color:#fff" required lay-verify="required" class="layui-input" placeholder="请输入管理员用户名"
+                               name="userName">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block" style="margin-left: 0px;">
+                        <input type="password" style="background-color:transparent;border-width:1px;border-color:#b8f8ff;color:#fff" required lay-verify="required" class="layui-input" placeholder="请输入管理员密码"
+                               name="userPwd">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block" style="margin-left: 0px;">
+                        <button class="layui-btn" lay-submit lay-filter="from_login"
+                                style="width: 100%">确定
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div th:replace="common/sha1::sha1"></div>
+</body>
+<script type="text/javascript">
+    function loadSuccess() {
+        layui.use(['carousel'], function () {
+            var carousel = layui.carousel;
+            carousel.render({
+                elem: '#div-carousel',
+                width: '100%',
+                height: '100%',
+                anim: 'fade',
+                arrow: 'none',
+                indicator: 'none'
+            });
+            //
+            form.on('submit(from_login)', function (data) {
+                if (!checkPwd(data.field.userPwd)) {
+                    return false;
+                }
+                //  密码强度
+                if (!checkPasswordStrong(data.field.userPwd)) {
+                    layer.msg("系统管理员密码强度太低");
+                    return false;
+                }
+                var sendData = formatPwd(data.field, "userPwd");
+                loadingAjax({
+                    url: './install_submit.json',
+                    data: sendData,
+                    success: function (data) {
+                        layer.msg(data.msg);
+                        if (200 === data.code) {
+                            window.location.href = './index.html';
+                        }
+                    }
+                });
+                return false;
+            });
+        });
+    }
+</script>
+
+</html>
